@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    title Persons List
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/persons.css")
+    script(src="/js/persons.js")
+  body
+    header
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='/') Persons table
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/') Form
+            li.nav-item
+              a.nav-link(href='/persons') Persons
+            li.nav-item
+              a.nav-link(href='/update') Update
+    div.container
+      h1 Persons List
+      table.table.table-bordered.table-striped
+        thead.thead-dark
+          tr
+            th Last Name
+            th First Name
+            th Date of Birth
+            th Address 1
+            th Address 2
+            th City
+            th Postal Code
+            th Country
+            th Phone Number
+            th Email
+            th User Notes
+            th Delete
+        tbody
+          each person in persons
+            tr
+              td= person.lastName
+              td= person.firstName
+              td= person.dateOfBirth
+              td= person.address1
+              td= person.address2
+              td= person.city
+              td= person.postalCode
+              td= person.country
+              td= person.phone
+              td= person.email
+              td= person.notes
+              td
+                form(action=`/delete/${person._id}`, method='POST')
+                  button.btn.btn-danger(type='submit') Delete
+
+
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")

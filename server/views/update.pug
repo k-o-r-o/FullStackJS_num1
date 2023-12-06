@@ -1,0 +1,60 @@
+html
+  body
+   header
+        nav
+          ul
+            li
+              a(href='/') Form
+            li
+              a(href='/persons') Persons
+            li
+              a(href='/update') Update
+              
+    h1 Update Person
+
+    form(action=`/update/${persons._id}`, method='POST')
+      table
+        tr
+          td Last Name
+          td
+            input(type='text', name='lastName', value=persons.lastName)
+        tr
+          td First Name
+          td
+            input(type='text', name='firstName', value=persons.firstName)
+        tr
+          td Date of Birth
+          td
+            input(type='date', name='dateOfBirth', value=persons.dateOfBirth)
+        tr
+          td Address 1
+          td
+            input(type='text', name='address1', value=persons.address1)
+        tr
+          td Address 2
+          td
+            input(type='text', name='address2', value=persons.address2)
+        tr
+          td City
+          td
+            input(type='text', name='city', value=persons.city)
+        tr
+          td Postal Code
+          td
+            input(type='text', name='postalCode', value=persons.postalCode)
+        tr
+          td Country
+          td
+            input(type='text', name='country', value=persons.country)
+        tr
+          td Phone Number
+          td
+            input(type='tel', name='phone', value=persons.phone)
+        tr
+          td Email
+          td
+            input(type='email', name='email', value=persons.email)
+        tr
+          td User Notes
+          td
+            textarea(name='notes', value=persons.notes)
